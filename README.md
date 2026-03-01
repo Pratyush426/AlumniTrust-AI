@@ -147,11 +147,3 @@ Open **http://localhost:5173** in your browser.
    - *Choice:* I built a modern, dark-theme "glassmorphism" UI from scratch (with some Tailwind utilities) instead of a rigid component library to deliver a highly polished, professional, and visually impressive aesthetic ("wow factor") suitable for a modern AI tool.
 
 ---
-
-## 🚀 What I Would Improve With More Time
-
-1. **Streaming Responses:** Implement WebSockets/Server-Sent Events (SSE) so the frontend Review Dashboard populates answers one-by-one in real-time as the LLM generates them, rather than waiting for the entire CSV to finish processing.
-2. **Advanced Chunking Strategy:** Right now, documents are chunked by character count. With more time, I would implement semantic/structural chunking (e.g., chunking by header or paragraph) to ensure context isn't split awkwardly.
-3. **Complex PDF Parsing:** Move beyond CSV questionnaires. Use something like `unstructured.io` or AWS Textract to parse wildly formatted vendor PDF forms and automatically map answers back onto the original PDF visually.
-4. **"Talk to your docs" Chatbot:** Add an inline chat widget in the Review Dashboard so if an answer requires editing, the user can ask follow-up questions to the knowledge base without leaving the page.
-5. **Partial Regeneration Requirement:** Add a dedicated button next to every answer card allowing the user to re-trigger the LLM generation for just that one specific question with adjusted context.
