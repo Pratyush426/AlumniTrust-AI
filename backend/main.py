@@ -79,6 +79,8 @@ def verify_password(plain: str, hashed: str) -> bool:
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     payload = data.copy()
+    if "sub" in payload:
+        payload["sub"] = str(payload["sub"])
     expire_minutes = expires_delta.total_seconds() / 60 if expires_delta else ACCESS_TOKEN_EXPIRE_MINUTES
     payload["exp"] = int(datetime.utcnow().timestamp()) + int(expire_minutes * 60)
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
