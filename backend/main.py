@@ -29,10 +29,25 @@ from engine import ingest_document, batch_process_questionnaire, delete_user_doc
 # ─────────────────────────────────────────────
 # App bootstrap
 # ─────────────────────────────────────────────
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    try:
+        from seed_demo_data import seed_demo_user, seed_documents
+        print("[System] Running auto-seeder for demo data (Render compatibility)...")
+        user_id = seed_demo_user()
+        seed_documents(user_id)
+        print("[System] Auto-seeder finished.")
+    except Exception as e:
+        print(f"[System] Warning: Auto-seeder skipped/failed: {e}")
+    yield
+
 app = FastAPI(
     title="AlumniTrust AI",
     description="HECVAT Automation with RAG — powered by Almabase",
-    version="1.0.0"
+    version="1.0.0",
+    lifespan=lifespan
 )
 
 app.add_middleware(
