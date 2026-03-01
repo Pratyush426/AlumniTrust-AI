@@ -15,7 +15,11 @@ const authHdr = () => ({ 'Authorization': `Bearer ${getToken()}`, 'Content-Type'
 
 async function apiFetch(path, opts = {}) {
   const res = await fetch(`${API}${path}`, { headers: authHdr(), ...opts });
-  if (res.status === 401) { localStorage.removeItem('alumni_token'); window.location.reload(); }
+  // Prevent aggressive logout if the 401 came from an auth endpoint itself
+  if (res.status === 401 && !path.includes('/auth/')) {
+    localStorage.removeItem('alumni_token');
+    window.location.reload();
+  }
   return res;
 }
 
