@@ -10,8 +10,14 @@ import DarkVeil from './DarkVeil';
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // ─── helpers ───────────────────────────────────────────────────────────────
-const getToken = () => localStorage.getItem('alumni_token');
-const authHdr = () => ({ 'Authorization': `Bearer ${getToken()}`, 'Content-Type': 'application/json' });
+const getToken = () => {
+  const t = localStorage.getItem('alumni_token');
+  return (t === 'null' || t === 'undefined') ? null : t;
+};
+const authHdr = () => {
+  const t = getToken();
+  return t ? { 'Authorization': `Bearer ${t}`, 'Content-Type': 'application/json' } : { 'Content-Type': 'application/json' };
+};
 
 async function apiFetch(path, opts = {}) {
   const res = await fetch(`${API}${path}`, { headers: authHdr(), ...opts });
