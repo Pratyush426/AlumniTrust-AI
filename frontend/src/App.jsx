@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import DarkVeil from './DarkVeil';
 
-const API = 'http://localhost:8000';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 // ─── helpers ───────────────────────────────────────────────────────────────
 const getToken = () => localStorage.getItem('alumni_token');
