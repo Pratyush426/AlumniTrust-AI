@@ -23,6 +23,8 @@ async function apiFetch(path, opts = {}) {
   const res = await fetch(`${API}${path}`, { headers: authHdr(), ...opts });
   // Prevent aggressive logout if the 401 came from an auth endpoint itself
   if (res.status === 401 && !path.includes('/auth/')) {
+    const errorText = await res.text().catch(() => 'Unknown error parsing response');
+    alert(`401 Unauthorized blocked your request to ${path}!\n\nBackend says: ${errorText}\n\nWe will now safely log you out.`);
     localStorage.removeItem('alumni_token');
     window.location.reload();
   }

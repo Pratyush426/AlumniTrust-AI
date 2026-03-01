@@ -53,7 +53,7 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -79,10 +79,8 @@ def verify_password(plain: str, hashed: str) -> bool:
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
     payload = data.copy()
-    expire = datetime.now(timezone.utc) + (
-        expires_delta if expires_delta else timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    )
-    payload["exp"] = expire
+    expire_minutes = expires_delta.total_seconds() / 60 if expires_delta else ACCESS_TOKEN_EXPIRE_MINUTES
+    payload["exp"] = int(datetime.utcnow().timestamp()) + int(expire_minutes * 60)
     return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
 
 
