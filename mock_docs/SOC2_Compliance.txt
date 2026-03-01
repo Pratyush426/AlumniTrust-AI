@@ -1,0 +1,37 @@
+# SOC2 COMPLIANCE AND SECURITY FRAMEWORK
+
+## Security Overview
+
+Almabase maintains enterprise-grade security practices aligned with SOC2 Type II compliance standards. Our security infrastructure is designed to protect sensitive higher education data with multiple layers of protection.
+
+## Data Encryption
+
+All data is encrypted at rest using AES-256 encryption standards. Data in transit is protected using TLS 1.2 or higher, ensuring end-to-end encryption for all communications between clients and our servers.
+
+### Encryption Details
+- **At Rest**: AES-256 block cipher encryption on all persistent storage
+- **In Transit**: TLS 1.2+ for all API communications and data transfers
+- **Key Management**: Encryption keys are managed through AWS KMS (Key Management Service) with regular rotation policies
+
+## Audit and Compliance
+
+We undergo annual SOC2 Type II audits conducted by independent third-party auditors. These audits verify our security controls, operational effectiveness, and compliance with AICPA Trust Service Criteria.
+
+### Audit Scope
+- Access controls and authentication mechanisms
+- System monitoring and logging practices
+- Change management procedures
+- Business continuity and disaster recovery planning
+- Data backup and retention protocols
+
+## Access Controls
+
+All system access is controlled through role-based access control (RBAC) with multi-factor authentication (MFA) enforcement for administrative accounts. Regular access reviews are conducted quarterly to ensure least-privilege principles are maintained.
+
+## Incident Response
+
+We maintain a comprehensive incident response plan with documented procedures for security events, data breaches, and system failures. Our security team maintains 24/7 monitoring capabilities with average response time of under 15 minutes for critical incidents.
+
+## Vulnerability Management
+
+Regular vulnerability assessments and penetration testing are conducted by external security firms. All identified vulnerabilities are tracked in our vulnerability management system with defined remediation timelines based on severity levels.

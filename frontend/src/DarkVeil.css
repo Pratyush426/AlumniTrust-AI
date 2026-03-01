@@ -1,0 +1,12 @@
+.darkveil-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* Darken the naturally grey/bright shader output */
+    filter: brightness(0.35) saturate(1.6) hue-rotate(200deg);
+}
+
+.darkveil-fallback {
+    background: linear-gradient(135deg, #020617 0%, #0d0d2b 50%, #020617 100%);
+    filter: none;
+}

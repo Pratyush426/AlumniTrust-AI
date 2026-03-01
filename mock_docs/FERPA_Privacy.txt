@@ -1,0 +1,39 @@
+# FERPA PRIVACY COMPLIANCE
+
+## Family Educational Rights and Privacy Act (FERPA) Overview
+
+Almabase is fully compliant with the Family Educational Rights and Privacy Act (FERPA), which protects the privacy of student education records. All student data handled through our platform adheres to strict FERPA requirements.
+
+## Student Records Protection
+
+Student records are maintained in isolated, segregated databases with strict access controls. Each institution's student data is completely siloed, ensuring that data from one institution is never accessible to another institution or unauthorized parties.
+
+## Access Control Implementation
+
+Access to student records is granted only through scoped API keys that are institution-specific and controlled by individual higher education institutions. Each API key has defined permissions and usage limits.
+
+### Key Features:
+- **Institutional Segregation**: Complete data isolation between institutions
+- **Scoped API Keys**: Each institution controls its own access credentials
+- **Role-Based Access**: Users can only access records permitted by their role
+- **Audit Logging**: All access to student records is logged and auditable
+
+## Parent and Student Rights
+
+We support all FERPA-required rights including:
+- Right to inspect and review education records
+- Right to request correction of inaccurate records
+- Right to control disclosure of education records
+- Right to receive notification of third-party access
+
+## Data Retention and Deletion
+
+Student records are retained in compliance with institutional retention schedules. When an institution requests deletion of student data, we permanently remove all copies of that data within 30 days, with verification provided through audit compliance reports.
+
+## Unauthorized Disclosure Prevention
+
+We maintain strict policies to prevent unauthorized FERPA disclosures. Any violations are investigated immediately, and affected institutions and individuals are notified per FERPA requirements. We provide detailed incident reports and remediation plans.
+
+## Regular FERPA Audits
+
+Annual FERPA compliance audits are conducted by our compliance team. These audits verify that data handling practices align with FERPA requirements and institutional policies.

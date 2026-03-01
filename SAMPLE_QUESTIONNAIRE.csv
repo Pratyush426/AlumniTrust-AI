@@ -1,0 +1,25 @@
+Question,Category
+How do you encrypt data at rest?,Security
+What encryption standard do you use for data in transit?,Security
+Do you undergo annual security audits?,Security
+Are you SOC2 Type II compliant?,Compliance
+What is your data retention policy?,Data Management
+How long do you retain student records?,Data Management
+Are you FERPA compliant?,Compliance
+How are student records protected from unauthorized access?,Privacy
+Do you support bi-directional CRM synchronization?,Integration
+Which CRM platforms do you integrate with?,Integration
+Do you support Salesforce NPSP?,Integration
+Do you support Blackbaud Raiser's Edge?,Integration
+What is your incident response procedure?,Security
+How quickly can you respond to security incidents?,Security
+Do you provide audit logs for data access?,Compliance
+Can institutions export their data in standard formats?,Data Management
+Do you support Single Sign-On (SSO)?,Authentication
+What SSO protocols are supported?,Authentication
+Do you support multi-factor authentication (MFA)?,Authentication
+Is MFA mandatory for administrative accounts?,Authentication
+What is your disaster recovery RTO?,Business Continuity
+What is your disaster recovery RPO?,Business Continuity
+Do you maintain geographic redundancy?,Business Continuity
+How many data centers do you operate?,Business Continuity

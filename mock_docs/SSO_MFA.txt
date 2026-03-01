@@ -1,0 +1,101 @@
+# SSO AND MULTI-FACTOR AUTHENTICATION
+
+## Single Sign-On (SSO) Implementation
+
+Almabase supports enterprise Single Sign-On (SSO) through multiple protocols and identity providers, enabling seamless integration with institutional authentication systems.
+
+## Supported SSO Protocols
+
+### SAML 2.0
+- Full support for SAML 2.0 identity providers
+- Attribute mapping for role and group synchronization
+- Signed authentication requests and encrypted assertions
+- Service provider-initiated and identity provider-initiated flows
+
+### OpenID Connect (OIDC)
+- Full implementation of OpenID Connect authorizations
+- Support for standard and proprietary scopes
+- Token refresh mechanisms for long-lived sessions
+- Distributed logout coordination
+
+### Microsoft Azure AD Integration
+- Native Azure AD provisioning and deprovisioning
+- Conditional access policy compatibility
+- Office 365 cloud app intergration
+- Real-time group and role synchronization
+
+## Multi-Factor Authentication (MFA)
+
+MFA is mandatory for all administrative accounts and strongly recommended for end users. Multiple MFA methods are supported to accommodate diverse user preferences and security requirements.
+
+### Supported MFA Methods
+
+**Time-based One-Time Password (TOTP)**
+- Compatible with authenticator apps (Google Authenticator, Microsoft Authenticator, Authy)
+- Backup codes provided for account recovery
+- Automatic token refresh every 30 seconds
+
+**SMS-based OTP**
+- SMS delivery to verified phone numbers
+- OTP validity period of 5 minutes
+- Rate limiting prevents brute force attacks
+- Non-repudiation logging of all SMS deliveries
+
+**Hardware Security Keys**
+- Support for FIDO2 and WebAuthn-compatible keys
+- YubiKey and similar device compatibility
+- Server-side verification of cryptographic proof
+
+**Email-based Verification**
+- One-click verification links via email
+- Link validity period of 15 minutes
+- Replay attack prevention through nonce tokens
+
+## Session Management
+
+### Session Configuration
+- Session timeout: 24 hours of active use with automatic extension
+- Idle timeout: 30 minutes of inactivity triggers re-authentication
+- Concurrent session limits: 5 concurrent sessions per user account
+- Device tracking and remote session termination capability
+
+### Security Features
+- Session tokens are cryptographically signed and verified
+- IP address change triggers step-up authentication
+- Geographic anomaly detection alerts users of unusual access patterns
+- Session activity logging for audit and forensics
+
+## Password Policies
+
+### Password Requirements
+- Minimum 14 characters (NIST 800-63B compliant)
+- Complexity rules: Mix of uppercase, lowercase, numbers, and symbols
+- Password history: Last 12 passwords cannot be reused
+- Expiration: No forced expiration; compromised password reset only
+
+### Account Lockout
+- 5 failed login attempts trigger 15-minute lockout
+- Progressive delays between attempts (exponential backoff)
+- Lockout notification sent via email
+- Account unlock via email link or administrator intervention
+
+## Risk-Based Authentication
+
+Advanced risk assessment evaluates:
+- Unusual login times or locations
+- Device fingerprinting and device trust scores
+- Velocity checks for multiple login attempts
+- Intelligence feeds for compromised credential detection
+
+When risk indicators are elevated, step-up authentication is triggered:
+- Additional MFA challenges
+- Security questions verification
+- Email confirmation required
+- Behavioral analytics review
+
+## Compliance and Auditing
+
+- All SSO and MFA events are logged with timestamps
+- User consent for MFA method registration is documented
+- Regular access reviews verify authorization appropriateness
+- Security incident reporting integration for breaches

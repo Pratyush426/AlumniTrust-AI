@@ -1,0 +1,70 @@
+# DATA RETENTION AND ARCHIVAL POLICIES
+
+## Data Retention Framework
+
+Almabase maintains a comprehensive data retention policy that balances operational needs with privacy and compliance requirements. All data retention decisions are documented and reviewed annually.
+
+## Retention Periods by Data Type
+
+### Student Records
+- Active student records: Maintained for duration of enrollment plus 7 years
+- Inactive student records: Retained per institution-defined retention schedule (typically 5-7 years)
+- Transcript records: Maintained permanently per FERPA requirements
+- Financial aid records: Retained for 7 years minimum
+
+### Donor and Constituent Records
+- Active donor records: Maintained indefinitely or per institutional policy
+- Inactive donors: Retained for minimum 5 years after last transaction
+- Prospect records: Retained for 3 years unless institution requests longer period
+- Donation records: Permanent retention with audit trail
+
+### System and Access Logs
+- Login and access logs: Retained for 1 year
+- Data modification logs: Retained for 7 years for audit compliance
+- Security incident logs: Retained for minimum 2 years
+- Backup logs: Retained for 90 days
+
+### Backup and Disaster Recovery Data
+- Production backups: Retained for 90 days with daily incremental backups
+- Archive backups: Retained for 7 years for long-term compliance
+- Geo-redundant copies: Maintained in separate geographic regions
+- Point-in-time recovery: Supported for 30-day recovery window
+
+## Data Deletion and Archiving
+
+When institutions request deletion of data:
+1. Data is marked for deletion and removed from active systems within 7 days
+2. Data is removed from all backups within 30 days through secure deletion protocols
+3. Verification reports are generated and provided to the institution
+4. Deletion is cryptographically verified and logged
+
+### Archive Process
+Data selected for archiving is:
+- Compressed and encrypted for storage efficiency
+- Stored in cold storage reducing operational costs
+- Indexed for searchable retrieval if needed
+- Maintained with integrity verification checks
+
+## Retention Schedule Reviews
+
+Annual reviews of retention schedules ensure:
+- Compliance with evolving regulatory requirements
+- Alignment with institutional needs
+- Cost optimization of storage resources
+- Updated procedures for new data types
+
+## Legal Hold Procedures
+
+When legal holds are issued:
+- All targeted data is immediately protected from deletion
+- Normal retention schedules are suspended
+- Legal hold status is tracked and monitored
+- Regular communication with legal counsel on hold status
+
+## Disaster Recovery and Business Continuity
+
+Data retention policies support disaster recovery objectives:
+- RPO (Recovery Point Objective): 24 hours maximum data loss
+- RTO (Recovery Time Objective): 4 hours for critical systems
+- Regular disaster recovery drills test recovery procedures
+- Multi-region redundancy ensures no single point of failure
